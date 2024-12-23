@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  .neumorphic-card {
+    @apply bg-[#1E0B36] rounded-[32px] p-8 shadow-lg border border-purple-800/20;
+  }
+  
+  .neumorphic-input {
+    @apply bg-purple-900/40 rounded-2xl px-6 py-4 
+           border border-purple-700/30 outline-none transition-all duration-300
+           text-white placeholder-purple-300/50;
+  }
+
+  .neumorphic-gauge {
+    @apply relative w-full h-20 bg-purple-900/40 rounded-full overflow-hidden
+           border border-purple-700/30;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-scale {
+  animation: scale 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
